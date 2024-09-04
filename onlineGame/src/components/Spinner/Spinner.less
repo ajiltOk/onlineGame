@@ -1,0 +1,82 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #98ff98;
+  position: absolute;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    background-color: #98ff98;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #00ff00;
+    transform: scale(1.5);
+  }
+}
+
+.dot:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dot:nth-child(2) {
+  top: 14%;
+  left: 86%;
+}
+.dot:nth-child(3) {
+  top: 50%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+}
+.dot:nth-child(4) {
+  top: 86%;
+  left: 86%;
+}
+.dot:nth-child(5) {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.dot:nth-child(6) {
+  top: 86%;
+  left: 14%;
+}
+.dot:nth-child(7) {
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.dot:nth-child(8) {
+  top: 14%;
+  left: 14%;
+}
+.dot:nth-child(9) {
+  top: 14%;
+  left: 50%;
+}
+.dot:nth-child(10) {
+  top: 50%;
+  left: 14%;
+}
+.dot:nth-child(11) {
+  top: 50%;
+  left: 86%;
+}
+.dot:nth-child(12) {
+  top: 14%;
+  left: 86%;
+}
