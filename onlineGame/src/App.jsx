@@ -6,8 +6,6 @@ import TournamentItem from "./components/TournamentItem/TournamentItem";
 import "./App.less";
 
 const App = () => {
-  const [loader, useLoader] = useState(true);
-
   const tournaments = [
     {
       type: "NL 2-7 Triple Draw",
@@ -77,32 +75,30 @@ const App = () => {
     balance: "$100,500.00",
   };
 
-  const removeLoader = () => {
-    useLoader(false);
-  };
-
   return (
     <div className="wrapper">
-      <h1 className="game-title">Poker</h1>
-      {loader && <Spinner className="spinner" />}
-      <PlayerInfo info={info} />
-      {loader && <Loader removeLoader={removeLoader} className="loader" />}
-      {tournaments.map((tournament, index) => (
-        <TournamentItem
-          key={index}
-          type={tournament.type}
-          name={tournament.name}
-          date={tournament.date}
-          prizePool={tournament.prizePool}
-          numberOfPlayers={tournament.numberOfPlayers}
-          maxNumberOfPlayers={tournament.maxNumberOfPlayers}
-          status={tournament.status}
-          fastTime={tournament.fastTime}
-          freeRoll={tournament.freeRoll}
-          pushpin={tournament.pushpin}
-          rapid={tournament.rapid}
-        />
-      ))}
+      <div className="container">
+        <h1 className="game-title">Poker</h1>
+        <Spinner className="spinner" />
+        <PlayerInfo info={info} />
+        <Loader className="loader" />
+        {tournaments.map((tournament, index) => (
+          <TournamentItem
+            key={index}
+            type={tournament.type}
+            name={tournament.name}
+            date={tournament.date}
+            prizePool={tournament.prizePool}
+            numberOfPlayers={tournament.numberOfPlayers}
+            maxNumberOfPlayers={tournament.maxNumberOfPlayers}
+            status={tournament.status}
+            fastTime={tournament.fastTime}
+            freeRoll={tournament.freeRoll}
+            pushpin={tournament.pushpin}
+            rapid={tournament.rapid}
+          />
+        ))}
+      </div>
     </div>
   );
 };

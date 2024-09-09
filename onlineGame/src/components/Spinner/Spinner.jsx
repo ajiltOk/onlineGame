@@ -3,19 +3,10 @@ import "./Spinner.less";
 
 const Spinner = () => {
   return (
-    <div class="lds-spinner">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className="lds-spinner">
+      {Array.from({ length: 12 }, (_, index) => (
+        <div key={index}></div>
+      ))}
     </div>
   );
 };

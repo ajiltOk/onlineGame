@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Loader.less";
 
-const Loader = ({ removeLoader }) => {
+const Loader = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -9,8 +9,6 @@ const Loader = ({ removeLoader }) => {
       setProgress((prev) => {
         if (prev < 100) {
           return prev + 1;
-        } else if (prev === 100) {
-          removeLoader();
         } else {
           clearInterval(interval);
           return prev;
