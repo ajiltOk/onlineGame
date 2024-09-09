@@ -124,6 +124,10 @@
 .tournament-date {
   gap: 4;
   color: rgba(255, 255, 255, 0.7);
+  max-width: 86px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .players,
@@ -159,4 +163,19 @@
 
 .tournament-max-number-of-players {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.tournament-max-number-of-players,
+.tournament-number-of-players {
+  max-width: 37px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tournament-prize-pool {
+  max-width: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
