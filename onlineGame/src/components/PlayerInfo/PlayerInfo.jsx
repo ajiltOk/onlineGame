@@ -1,22 +1,23 @@
 import "./PlayerInfo.less";
+import star from "../../assets/Vector.png";
+import user from "../../assets/Ellipse 464.png";
+import BalanceBtn from "../BalanceBtn/BalanceBtn";
 
 const PlayerInfo = ({ info }) => {
   return (
     <div className="player-info">
-      <div>
-        <p>{info.longUserName}</p>
-        <img src="../../assets/Vector.png" alt="stars" />
+      <div className="player-name-block">
+        <h2 className="player-name">{info.longUserName}</h2>
+        <div className="stars-block">
+          {Array.from({ length: info.stars }, (_, index) => (
+            <img key={index} className="star" src={star} alt="star" />
+          ))}
+        </div>
       </div>
-      <div>
-        <img src="../../assets/Ellipse 464.png" alt="user" />
+      <div className="user">
+        <img src={user} alt="user" />
       </div>
-      <div>
-        <img
-          src="../../assets/Property 1=show, Property 2=normal.png"
-          alt="logo"
-        />
-        <span>{info.balance}</span>
-      </div>
+      <BalanceBtn balance={info.balance} />
     </div>
   );
 };

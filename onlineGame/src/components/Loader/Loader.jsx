@@ -24,7 +24,7 @@ const Loader = ({ removeLoader }) => {
   return (
     <div className="progress-container">
       <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-      <div className="progress-percentage">{progress}%</div>
+      <div className="progress-percentage">Loading {progress}%</div>
     </div>
   );
 };
